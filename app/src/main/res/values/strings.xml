@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Android Animator</string>
+    <string name="rotate_x_letter">__</string>
+    <string name="rotate_y_letter"> --> </string>
+</resources>
