@@ -19,24 +19,23 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun animateThis() {
-        View.ALPHA
-        val valueAnimator = ofFloat(0f, 3600f)
-        valueAnimator.repeatMode = REVERSE
-        valueAnimator.repeatCount = INFINITE
-        valueAnimator.interpolator = AccelerateDecelerateInterpolator()
-        valueAnimator.duration = 10000
-        valueAnimator.addUpdateListener { animation ->
-            val progress = animation.animatedValue as Float
-            text_me.rotationX = progress
-            text_arrow.rotationY = progress
-            view_fan.rotation = progress
-            view_cloud.alpha = (3600  - progress)/3600
-            view_sun.scaleX = progress/3600 + 1
-            view_sun.scaleY = progress/3600 + 1
-            view_hotair.translationY = - progress/10
-            view_yatch.translationX = progress/10
-            btn_press_me.translationZ = progress/50
-        }
-        valueAnimator.start()
+        ofFloat(0f, 3600f).apply {
+            repeatMode = REVERSE
+            repeatCount = INFINITE
+            interpolator = AccelerateDecelerateInterpolator()
+            duration = 10000
+            addUpdateListener { animation ->
+                val progress = animation.animatedValue as Float
+                text_happy.rotationX = progress
+                text_arrow.rotationY = progress
+                view_fan.rotation = progress
+                view_cloud.alpha = (3600  - progress)/3600
+                view_sun.scaleX = progress/3600 + 1
+                view_sun.scaleY = progress/3600 + 1
+                view_hotair.translationY = - progress/10
+                view_yatch.translationX = progress/10
+                btn_press_me.translationZ = progress/50
+            }
+        }.start()
     }
 }
